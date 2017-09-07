@@ -1,36 +1,39 @@
-RedMatrix = [[1, 3],
+redMatrix = [[1, 3],
              [5, 2],
              [5, 1]]
-OrangeMatrix = [[2, 4],
+orangeMatrix = [[2, 4],
                 [3, 1],
                 [2, 1]]
-YellowMatrix = [[3, 1],
+yellowMatrix = [[3, 1],
                 [4, 4],
                 [4, 5]]
-LimeMatrix = [[4, 2],
+limeMatrix = [[4, 2],
               [5, 3],
               [5, 4]]
-GreenMatrix = [[3, 5],
+greenMatrix = [[3, 5],
                [1, 2],
                [1, 1]]
-BlueMatrix = [[5, 3],
+tealMatrix = [[2, 2],
+              [1, 3],
+              [1, 2]]
+blueMatrix = [[5, 3],
               [1, 4],
               [1, 5]]
-PurpleMatrix = [[4, 4],
+purpleMatrix = [[4, 4],
                 [4, 2],
                 [4, 1]]
 # keys matrices show position of keys, x and y; square door can be opened from, x and y; square door leads to, x and y
 
-WhiteMatrix = [1, 5]
-BrownMatrix = [5, 5]
-BlackMatrix = [5, 1]
-PinkMatrix = [1,1]
+whiteMatrix = [1, 5]
+brownMatrix = [5, 5]
+blackMatrix = [5, 1]
+pinkMatrix = [1, 1]
 # crystals matrices show position of crystals, x and y
 
-StairsMatrix = [2, 1]
+stairsMatrix = [2, 1]
 # stairs are at 2,1
 
-StartLocation = [3, 3]
+startLocation = [3, 3]
 # start is at 3, 3
 
 Matrix = [["0010", "0110", "0101", "0011", "0010"],
@@ -59,7 +62,7 @@ class Movement:
     global x
     global y
     global position
-    def checkMove(position):
+    def checkMoves(position):
         if position[0] == "1":
             print("You can GO NORTH.")
         if position[1] == "1":
@@ -121,7 +124,9 @@ class Keys:
         elif position == purpleMatrix[1]:
             InventoryKeys[7] = 1
             print("You found a purple key.")
-    # def inventoryCheck(Inventory):
+##    def inventoryCheck(Inventory):
+##        if InventoryKeys[0] == 1 and position == redMatrix[2,3] and :
+
 
 class Crystals:
     def inventoryCUpdate(position):
@@ -148,10 +153,10 @@ if __name__ == "__main__":
     game = "inProgress"
     # say where you start
     while game == "inProgress":
-        Movement.checkMove(position)
+        Movement.checkMoves(position)
         move = input()
         Movement.go(move);
-        if x == 3 and y == 3 and InventoryCrystals == [1, 1, 1, 1]:
+        if x == 2 and y == 1 and InventoryCrystals == [1, 1, 1, 1]:
         # if you get to the stairs
             print("Congrats! You won!")
             game = "won"
