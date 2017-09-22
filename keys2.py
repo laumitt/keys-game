@@ -54,16 +54,16 @@ class Pos:
         # say where you can go
 if __name__ == "__main__":
     print("Welcome to The Keys Adventure. Your objective is to collect the four crystals then reach the stairs. Good luck.")
-    game = "inProgress"
+    game = True
     currentPos = Pos()
     # say where you start
-    while game == "inProgress":
+    while game == True:
         currentPos.check()
         go = input()
         if currentPos.x == 2 and currentPos.y == 1 and Inventory.crystals == [1, 1, 1, 1]:
         # if you get to the stairs
             print("Congrats! You won!")
-            game = "won"
+            game = False
             # you won
             break
             # end program
