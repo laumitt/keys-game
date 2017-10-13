@@ -1,27 +1,12 @@
 Matrix = [["0010c", "0110n", "0101y", "0011n", "0010c"],
-          ["1010n", "1000o", "0100n", "1101ln", "1011n"],
-          ["1110r", "0101", "0011", "0100", "1011g"],
+          ["1010n", "1000o", "0100n", "1101l", "1011n"],
+          ["1110r", "0101n", "0011n", "0100n", "1011g"],
           ["1010n", "0100p", "1101n", "0111t", "1011n"],
           ["1000c", "0100n", "0101b", "1001n", "1000c"]]
 # a  5 by 5 matrix, 0 - 4 by 0 - 4
 # defines each position's possible movement directions
 # 0 means can't go, 1 means can go, NESW
-
 # the room 1,1 is 11, the room 1,2 is 12 and to the right of 11, etc
-#Crystals = {"pink" : "04",
-#            "white" : "00",
-#            "brown" : "40",
-#            "black" : "44"}
-            # where the crystals are
-# Keys = {"red" : "02",
-    #    "orange" : "11",
-    #    "yellow" : "24",
-    #    "lime" : "33",
-    #    "green" : "20",
-    #    "teal" : "13",
-    #    "blue" : "42",
-    #    "purple" : "31"}
-        # where the keys are
 
 class Room:
     def __init__(self):
@@ -89,7 +74,8 @@ class Objects(Room):
         elif self.position[4] == "p":
             print("Purple Key found")
             self.inventory.append["purple"]
-        elif self.position[4] == "c" and self.numcrystals == 0:
+    def checkCrystals(self):
+        if self.position[4] == "c" and self.numcrystals == 0:
             print("Crystal 1 found")
             self.inventory.append["crystal1"]
             self.numcrystals = 1
